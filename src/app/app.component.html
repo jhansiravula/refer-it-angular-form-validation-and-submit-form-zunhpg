@@ -1,0 +1,22 @@
+<form ngSubmit=(save) [formGroup]="demoForm">
+	<span> <h1>{{name}}</h1></span>
+	<p>
+		<label>
+  Name:
+  <input type="text" [formControl]="nameCtrl">
+    <div *ngIf="hasError('nameCtrl', 'required')">
+    Name is required.
+    </div>
+</label>
+	</p>
+	<p>
+		<label>
+  Age  :
+  <input type="text" [formControl]="ageCtrl">
+    <div *ngIf="hasError('ageCtrl', 'required')">
+    Age is required.
+    </div>
+</label>
+	</p>
+	<button type='submit' [disabled]="!demoForm.valid">Save</button>
+</form>
